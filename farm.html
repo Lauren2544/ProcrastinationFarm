@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="tammy.css">
+        <script type="text/javascript" src="script.js"></script>
+        <title>Procrastination Farm</title>
+
+    </head>
+    <body>
+        <h1 id="title">00:00</h1>
+        <p><button  id ="my-button">Begin Studying</button> </p>
+
+        <button onClick = "startTimer(5,0)">Start Studying</button>
+        <p id = "timer">00:00</p>
+
+
+        <script>
+
+            var timerbutton = document.getElementById("my-button");
+            var title= document.getElementById("title");
+            var m=0;
+            var s=0;
+            var myInterval=-1;
+
+            timerbutton.addEventListener("click", function(event){
+                //if paused start
+                if (myInterval==-1){
+                    timerbutton.innerHTML="Pause";
+                
+                    myInterval= setInterval(function(){
+                        if (m==0 && s<9 ){
+                            s++;
+                            title.innerHTML="00:0"+s;
+                        } else if (m==0 && s<59){
+                            s++;
+                            title.innerHTML="00:"+s;
+                        } else if (s==59 && m<9){
+                            m++;
+                            s=0;
+                            title.innerHTML="0"+m+":00";
+                        } else if (m<10 && s<9){
+                            s++;
+                            title.innerHTML="0"+m+":0"+s;
+                        } else if (m<10 && s<59){
+                            s++;
+                            title.innerHTML="0"+m+":"+s;
+                        } else if (m<60 && s<9){
+                            s++;
+                            title.innerHTML=m+":0"+s;
+                        } else if (m<60 && s==59){
+                            m++;
+                            s=0;
+                            title.innerHTML=m+":00";
+                        }else if (m<60 && s<59){
+                            s++;
+                            title.innerHTML=m+":"+s;
+
+                        }
+
+                        
+                    },1000);
+
+                }
+                //else pause 
+                else {
+                    timerbutton.innerHTML="Resume";
+                    clearInterval(myInterval); 
+                    myInterval=-1;
+                }
+            });
+
+
+
+            function startTimer(m,s)
+            {
+                document.getElementById('timer').innerHTML= m+":"+s;
+                if (s==0)
+                    {
+                       if (m == 0)
+                        {
+                            return;
+                        }
+                        else if (m != 0)
+                        {
+                            m = m-1;
+                            s = 60;
+                        }
+                }
+            s = s-1;
+            t=setTimeout(function(){startTimer(m,s)},1000);
+        }
+
+
+
+
+   
+
+        </script>
+
+
+<!--
+        <p>
+        <button type="button" onclick="zoomin()">Zoom In</button>
+        <button type="button" onclick="zoomout()">Zoom Out</button>
+        </p>
+        <img src="p.png" id="sky" width="250" alt="Cloudy Sky">
+
+
+
+
+
+                    function zoomin(){
+                var myImg = document.getElementById("sky");
+                var currWidth = myImg.clientWidth;
+                if(currWidth == 500){
+                    alert("Maximum zoom-in level reached.");
+                } else{
+                    myImg.style.width = (currWidth + 50) + "px";
+                } 
+            }
+
+            function zoomout(){
+                var myImg = document.getElementById("sky");
+                var currWidth = myImg.clientWidth;
+                if(currWidth == 50){
+                    alert("Maximum zoom-out level reached.");
+                } else{
+                    myImg.style.width = (currWidth - 50) + "px";
+                }
+            }
+-->
+
+
+
+      
+
+
+    </body>
+</html>
+
+
+
+
