@@ -1,0 +1,184 @@
+body{ 
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: #ccf5ff;
+  font-family: sans-serif; 
+}
+
+.titlename{
+    font-family:Comic Sans MS, Comic Sans;
+    text-align:center;
+    font-size: 55px;
+    background-color:black;
+    background-size:100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    text-shadow: 0 0.1vw 0 white,
+               0 0.2vw 0 grey,
+               0 0.3vw 0 grey,
+               0 0.4vw 0 grey,
+               0 0.5vw 0 grey,
+               0 0.6vw .1vw rgba(0,0,0,.1),
+               0 0 0.5vw rgba(0,0,0,.1),
+               0 0.1vw .3vw rgba(0,0,0,.3),
+               0 0.3vw .5vw rgba(0,0,0,.2),
+               0 0.5vw .10vw rgba(0,0,0,.25),
+               0 0.10vw .10vw rgba(0,0,0,.2),
+               0 0.20vw .20vw rgba(0,0,0,.15);
+}
+ 
+.titlename2{
+	font-family:Comic Sans MS, Comic Sans;
+    text-align:center;
+    font-size: 27px;
+    background-color:black;
+    background-size:100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    text-shadow: 0 0.1vw 0 white,
+               0 0.2vw 0 grey,
+               0 0.3vw 0 grey,
+               0 0.4vw 0 grey,
+               0 0.5vw 0 grey,
+               0 0.6vw .1vw rgba(0,0,0,.1),
+               0 0 0.5vw rgba(0,0,0,.1),
+               0 0.1vw .3vw rgba(0,0,0,.3),
+               0 0.3vw .5vw rgba(0,0,0,.2),
+               0 0.5vw .10vw rgba(0,0,0,.25),
+               0 0.10vw .10vw rgba(0,0,0,.2),
+               0 0.20vw .20vw rgba(0,0,0,.15);
+
+}
+
+
+
+
+/*controls sign up information*/
+.information{
+  background: transparent;
+  font-size: 20px;
+  width: 55vw;
+  color:black;
+  font-weight: bold;
+  margin-bottom: 16px;
+  border: none;
+  border-bottom: 4px dotted  #abe0f5;
+}
+input{
+  height: 5vw;
+}
+
+
+/*controls sign up button and timer button*/
+.submit {
+  background: #abe0f5;
+  border-color: transparent;
+  color: white;
+  font-size: 27px;
+  font-weight: bold;
+  height: 40px;
+  width: 240px;
+}
+.submit:hover {
+  background-color: #abe0f5;
+  border-color: grey;
+  cursor:pointer;
+  color: white;
+}
+
+
+
+
+
+
+/*menu 2.0*/
+.dropbtn {
+  width: 40px;
+  height:30px;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  overflow: auto;
+  white-space: nowrap;
+  cursor: pointer;
+  padding-right: 1000000px;
+}
+
+
+.dropdown-content {
+  background-color: #777;
+  display: none;
+  position: absolute;
+   overflow: auto;
+  white-space: nowrap;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+    overflow: auto;
+  white-space: nowrap;
+}
+
+.dropdown a:hover {
+	background-color: #6b6b6b;
+}
+
+.show {
+	display: block;
+	overflow: auto;
+  white-space: nowrap;
+}
+
+
+
+
+
+/*box*/
+.box {
+  background-color: white;
+  text-align:center;
+  width: 70vw;
+  height: 500px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: auto;
+}
+
+
+.box2 {
+  background-color: green;
+
+  width: 60vw;
+  padding-left:100px;
+  height: 500px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: auto;
+}
+
+.silo{
+	padding-right: 5000000px;
+}
+
+.an4{
+    padding-right: 500px;
+}
+
+
+.an1{
+    padding-right: 30px;
+}
+
+.an3{
+    padding-left: 200px;
+}
+
+
+

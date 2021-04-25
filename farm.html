@@ -3,138 +3,389 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="tammy.css">
+        <link rel="stylesheet" href="farm.css">
         <script type="text/javascript" src="script.js"></script>
         <title>Procrastination Farm</title>
 
+
     </head>
     <body>
-        <h1 id="title">00:00</h1>
-        <p><button  id ="my-button">Begin Studying</button> </p>
 
-        <button onClick = "startTimer(5,0)">Start Studying</button>
-        <p id = "timer">00:00</p>
+
+        <div class="dropdown">
+            <input type="image" src="menu.JPEG" onclick="myFunction()" class="dropbtn">
+          <div id="myDropdown" class="dropdown-content">
+
+            <a ><img src="1.png" width="50" alt="Cloudy Sky"><br>Price: One Hour <h1 id="title1">00:00</h1><p><button  id ="button1" class="submit">Begin Studying </button> </p><br></a>
+
+            <a ><img src="2.png" width="70" alt="Cloudy Sky"><br>Price: One Hour <h1 id="title2">00:00</h1><p><button  id ="button2" class="submit">Begin Studying</button></p><br></a>
+
+            <a ><img src="3.png"    width="70" alt="Cloudy Sky"><br>Price: One Hour <h1 id="title3">00:00</h1><p><button  id ="button3" class="submit">Begin Studying</button></p><br></a>
+
+            <a><img src="5.png" width="50" alt="Cloudy Sky"><br>Price: One Hour <h1 id="title5">00:00</h1><p><button  id ="button5" class="submit">Begin Studying</button></p><br></a>
+
+            <a ><img src="4.png" width="40" alt="Cloudy Sky"><br>Price: One Hour <h1 id="title4">00:00</h1><p><button  id ="button4" class="submit">Begin Studying</button></p><br></a>
+          </div>
+        </div>
+
+        <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
+        <br>
+        
+       <p class='box2'>
+            <img src="silo.png" class="silo"  width="70" alt="Cloudy Sky"><img src="1.png" class ="an1" id="sky" width="0" alt="Cloudy Sky">
+            <img src="2.png" id="bye" width="0" alt="Cloudy Sky"><br><br>
+            <img src="4.png" id="lye" class="an4" width="0" alt="Cloudy Sky">
+            <img src="3.png" id="zye" class="an3" width="0" alt="Cloudy Sky"><br><br>
+            <img src="5.png" id="dye" width="0" alt="Cloudy Sky">
+       </p> 
+
+
+       
+
+
+
+
+
+    
+
 
 
         <script>
 
-            var timerbutton = document.getElementById("my-button");
-            var title= document.getElementById("title");
+            var timerbutton1 = document.getElementById("button1");
+            var title1= document.getElementById("title1");
             var m=0;
             var s=0;
             var myInterval=-1;
+            var myImg1 = document.getElementById("sky");
+            var currWidth = 0;
 
-            timerbutton.addEventListener("click", function(event){
+            timerbutton1.addEventListener("click", function(event){
                 //if paused start
                 if (myInterval==-1){
-                    timerbutton.innerHTML="Pause";
+                    timerbutton1.innerHTML="Pause";
                 
                     myInterval= setInterval(function(){
                         if (m==0 && s<9 ){
                             s++;
-                            title.innerHTML="00:0"+s;
+                            myImg1.style.width = (currWidth + 5) + "px";
+                            title1.innerHTML="00:0"+s;
                         } else if (m==0 && s<59){
                             s++;
-                            title.innerHTML="00:"+s;
+                            myImg1.style.width = (currWidth + 10) + "px";
+                            title1.innerHTML="00:"+s;
                         } else if (s==59 && m<9){
                             m++;
                             s=0;
-                            title.innerHTML="0"+m+":00";
+                            myImg1.style.width = (currWidth + 15) + "px";
+                            title1.innerHTML="0"+m+":00";
                         } else if (m<10 && s<9){
                             s++;
-                            title.innerHTML="0"+m+":0"+s;
+                            myImg1.style.width = (currWidth + 20) + "px";
+                            title1.innerHTML="0"+m+":0"+s;
                         } else if (m<10 && s<59){
                             s++;
-                            title.innerHTML="0"+m+":"+s;
+                            myImg1.style.width = (currWidth + 25) + "px";
+                            title1.innerHTML="0"+m+":"+s;
                         } else if (m<60 && s<9){
                             s++;
-                            title.innerHTML=m+":0"+s;
+                            myImg1.style.width = (currWidth +30) + "px";
+                            title1.innerHTML=m+":0"+s;
                         } else if (m<60 && s==59){
                             m++;
                             s=0;
-                            title.innerHTML=m+":00";
+                            myImg1.style.width = (currWidth + 35) + "px";
+                            title1.innerHTML=m+":00";
                         }else if (m<60 && s<59){
                             s++;
-                            title.innerHTML=m+":"+s;
-
-                        }
-
-                        
+                            myImg1.style.width = (currWidth + 70) + "px";
+                            title1.innerHTML=m+":"+s;
+                        } 
                     },1000);
-
                 }
                 //else pause 
                 else {
-                    timerbutton.innerHTML="Resume";
+                    timerbutton1.innerHTML="Resume";
                     clearInterval(myInterval); 
                     myInterval=-1;
                 }
-            });
+            }); 
 
 
+            var timerbutton2 = document.getElementById("button2");
+            var title2= document.getElementById("title2");
+            var m=0;
+            var s=0;
+            var myInterval=-1;
+            var myImg2 = document.getElementById("bye");
+            var currWidth = 0;
 
-            function startTimer(m,s)
-            {
-                document.getElementById('timer').innerHTML= m+":"+s;
-                if (s==0)
-                    {
-                       if (m == 0)
-                        {
-                            return;
-                        }
-                        else if (m != 0)
-                        {
-                            m = m-1;
-                            s = 60;
-                        }
+            timerbutton2.addEventListener("click", function(event){
+                //if paused start
+                if (myInterval==-1){
+                    timerbutton2.innerHTML="Pause";
+                
+                    myInterval= setInterval(function(){
+                        if (m==0 && s<9 ){
+                            s++;
+                            myImg2.style.width = (currWidth + 5) + "px";
+                            title2.innerHTML="00:0"+s;
+                        } else if (m==0 && s<59){
+                            s++;
+                            myImg2.style.width = (currWidth + 10) + "px";
+                            title2.innerHTML="00:"+s;
+                        } else if (s==59 && m<9){
+                            m++;
+                            s=0;
+                            myImg2.style.width = (currWidth + 15) + "px";
+                            title2.innerHTML="0"+m+":00";
+                        } else if (m<10 && s<9){
+                            s++;
+                            myImg2.style.width = (currWidth + 20) + "px";
+                            title2.innerHTML="0"+m+":0"+s;
+                        } else if (m<10 && s<59){
+                            s++;
+                            myImg2.style.width = (currWidth + 25) + "px";
+                            title2.innerHTML="0"+m+":"+s;
+                        } else if (m<60 && s<9){
+                            s++;
+                            myImg2.style.width = (currWidth +30) + "px";
+                            title2.innerHTML=m+":0"+s;
+                        } else if (m<60 && s==59){
+                            m++;
+                            s=0;
+                            myImg2.style.width = (currWidth + 35) + "px";
+                            title2.innerHTML=m+":00";
+                        }else if (m<60 && s<59){
+                            s++;
+                            myImg2.style.width = (currWidth + 100) + "px";
+                            title2.innerHTML=m+":"+s;
+                        } 
+                    },1000);
                 }
-            s = s-1;
-            t=setTimeout(function(){startTimer(m,s)},1000);
-        }
+                //else pause 
+                else {
+                    timerbutton2.innerHTML="Resume";
+                    clearInterval(myInterval); 
+                    myInterval=-1;
+                }
+            }); 
+
+
+            var timerbutton3 = document.getElementById("button3");
+            var title3= document.getElementById("title3");
+            var m=0;
+            var s=0;
+            var myInterval=-1;
+            var myImg3 = document.getElementById("zye");
+            var currWidth = 0;
+
+            timerbutton3.addEventListener("click", function(event){
+                //if paused start
+                if (myInterval==-1){
+                    timerbutton3.innerHTML="Pause";
+                
+                    myInterval= setInterval(function(){
+                        if (m==0 && s<9 ){
+                            s++;
+                            myImg3.style.width = (currWidth + 5) + "px";
+                            title3.innerHTML="00:0"+s;
+                        } else if (m==0 && s<59){
+                            s++;
+                            myImg3.style.width = (currWidth + 10) + "px";
+                            title3.innerHTML="00:"+s;
+                        } else if (s==59 && m<9){
+                            m++;
+                            s=0;
+                            myImg3.style.width = (currWidth + 15) + "px";
+                            title3.innerHTML="0"+m+":00";
+                        } else if (m<10 && s<9){
+                            s++;
+                            myImg3.style.width = (currWidth + 20) + "px";
+                            title3.innerHTML="0"+m+":0"+s;
+                        } else if (m<10 && s<59){
+                            s++;
+                            myImg3.style.width = (currWidth + 25) + "px";
+                            title3.innerHTML="0"+m+":"+s;
+                        } else if (m<60 && s<9){
+                            s++;
+                            myImg3.style.width = (currWidth +30) + "px";
+                            title3.innerHTML=m+":0"+s;
+                        } else if (m<60 && s==59){
+                            m++;
+                            s=0;
+                            myImg3.style.width = (currWidth + 35) + "px";
+                            title3.innerHTML=m+":00";
+                        }else if (m<60 && s<59){
+                            s++;
+                            myImg3.style.width = (currWidth + 80) + "px";
+                            title3.innerHTML=m+":"+s;
+                        } 
+                    },1000);
+                }
+                //else pause 
+                else {
+                    timerbutton3.innerHTML="Resume";
+                    clearInterval(myInterval); 
+                    myInterval=-1;
+                }
+            }); 
 
 
 
 
-   
+
+            var timerbutton4 = document.getElementById("button4");
+            var title4= document.getElementById("title4");
+            var m=0;
+            var s=0;
+            var myInterval=-1;
+            var myImg4 = document.getElementById("lye");
+            var currWidth = 0;
+
+            timerbutton4.addEventListener("click", function(event){
+                //if paused start
+                if (myInterval==-1){
+                    timerbutton4.innerHTML="Pause";
+                
+                    myInterval= setInterval(function(){
+                        if (m==0 && s<9 ){
+                            s++;
+                            myImg4.style.width = (currWidth + 5) + "px";
+                            title4.innerHTML="00:0"+s;
+                        } else if (m==0 && s<59){
+                            s++;
+                            myImg4.style.width = (currWidth + 10) + "px";
+                            title4.innerHTML="00:"+s;
+                        } else if (s==59 && m<9){
+                            m++;
+                            s=0;
+                            myImg4.style.width = (currWidth + 15) + "px";
+                            title4.innerHTML="0"+m+":00";
+                        } else if (m<10 && s<9){
+                            s++;
+                            myImg4.style.width = (currWidth + 20) + "px";
+                            title4.innerHTML="0"+m+":0"+s;
+                        } else if (m<10 && s<59){
+                            s++;
+                            myImg4.style.width = (currWidth + 25) + "px";
+                            title4.innerHTML="0"+m+":"+s;
+                        } else if (m<60 && s<9){
+                            s++;
+                            myImg4.style.width = (currWidth +30) + "px";
+                            title4.innerHTML=m+":0"+s;
+                        } else if (m<60 && s==59){
+                            m++;
+                            s=0;
+                            myImg4.style.width = (currWidth + 35) + "px";
+                            title4.innerHTML=m+":00";
+                        }else if (m<60 && s<59){
+                            s++;
+                            myImg4.style.width = (currWidth + 50) + "px";
+                            title4.innerHTML=m+":"+s;
+                        } 
+                    },1000);
+                }
+                //else pause 
+                else {
+                    timerbutton4.innerHTML="Resume";
+                    clearInterval(myInterval); 
+                    myInterval=-1;
+                }
+            }); 
+
+
+
+
+
+
+
+
+            var timerbutton5 = document.getElementById("button5");
+            var title5= document.getElementById("title5");
+            var m=0;
+            var s=0;
+            var myInterval=-1;
+            var myImg5 = document.getElementById("dye");
+            var currWidth = 0;
+
+            timerbutton5.addEventListener("click", function(event){
+                //if paused start
+                if (myInterval==-1){
+                    timerbutton5.innerHTML="Pause";
+                
+                    myInterval= setInterval(function(){
+                        if (m==0 && s<9 ){
+                            s++;
+                            myImg5.style.width = (currWidth + 5) + "px";
+                            title5.innerHTML="00:0"+s;
+                        } else if (m==0 && s<59){
+                            s++;
+                            myImg5.style.width = (currWidth + 10) + "px";
+                            title5.innerHTML="00:"+s;
+                        } else if (s==59 && m<9){
+                            m++;
+                            s=0;
+                            myImg5.style.width = (currWidth + 15) + "px";
+                            title5.innerHTML="0"+m+":00";
+                        } else if (m<10 && s<9){
+                            s++;
+                            myImg5.style.width = (currWidth + 20) + "px";
+                            title5.innerHTML="0"+m+":0"+s;
+                        } else if (m<10 && s<59){
+                            s++;
+                            myImg5.style.width = (currWidth + 25) + "px";
+                            title5.innerHTML="0"+m+":"+s;
+                        } else if (m<60 && s<9){
+                            s++;
+                            myImg5.style.width = (currWidth +30) + "px";
+                            title5.innerHTML=m+":0"+s;
+                        } else if (m<60 && s==59){
+                            m++;
+                            s=0;
+                            myImg5.style.width = (currWidth + 35) + "px";
+                            title5.innerHTML=m+":00";
+                        }else if (m<60 && s<59){
+                            s++;
+                            myImg5.style.width = (currWidth + 70) + "px";
+                            title5.innerHTML=m+":"+s;
+                        } 
+                    },1000);
+                }
+                //else pause 
+                else {
+                    timerbutton5.innerHTML="Resume";
+                    clearInterval(myInterval); 
+                    myInterval=-1;
+                }
+            }); 
+
+
+
+
 
         </script>
 
-
-<!--
-        <p>
-        <button type="button" onclick="zoomin()">Zoom In</button>
-        <button type="button" onclick="zoomout()">Zoom Out</button>
-        </p>
-        <img src="p.png" id="sky" width="250" alt="Cloudy Sky">
-
-
-
-
-
-                    function zoomin(){
-                var myImg = document.getElementById("sky");
-                var currWidth = myImg.clientWidth;
-                if(currWidth == 500){
-                    alert("Maximum zoom-in level reached.");
-                } else{
-                    myImg.style.width = (currWidth + 50) + "px";
-                } 
-            }
-
-            function zoomout(){
-                var myImg = document.getElementById("sky");
-                var currWidth = myImg.clientWidth;
-                if(currWidth == 50){
-                    alert("Maximum zoom-out level reached.");
-                } else{
-                    myImg.style.width = (currWidth - 50) + "px";
-                }
-            }
--->
-
-
-
-      
 
 
     </body>
