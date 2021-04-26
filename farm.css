@@ -164,7 +164,7 @@ input{
 }
 
 .silo{
-	padding-right: 5000000px;
+	float:left;
 }
 
 .an4{
@@ -178,6 +178,12 @@ input{
 
 .an3{
     padding-left: 200px;
+}
+
+
+.barn{
+  float:right;
+
 }
 
 

@@ -16,7 +16,7 @@
             <input type="image" src="menu.JPEG" onclick="myFunction()" class="dropbtn">
           <div id="myDropdown" class="dropdown-content">
 
-            <a ><img src="1.png" width="50" alt="Cloudy Sky"><br>Price: One Hour <h1 id="title1">00:00</h1><p><button  id ="button1" class="submit">Begin Studying </button> </p><br></a>
+            <a ><img src="1.png" width="50" alt="Cloudy Sky"><br>Price: One Hour <h1 class= " blink blink-two"   id="title1">00:00</h1><p><button  id ="button1" class="submit">Begin Studying </button> </p><br></a>
 
             <a ><img src="2.png" width="70" alt="Cloudy Sky"><br>Price: One Hour <h1 id="title2">00:00</h1><p><button  id ="button2" class="submit">Begin Studying</button></p><br></a>
 
@@ -52,8 +52,9 @@
         <br>
         
        <p class='box2'>
-            <img src="silo.png" class="silo"  width="70" alt="Cloudy Sky"><img src="1.png" class ="an1" id="sky" width="0" alt="Cloudy Sky">
-            <img src="2.png" id="bye" width="0" alt="Cloudy Sky"><br><br>
+            <img src="silo.png" class="silo"  width="70" alt="Cloudy Sky"><img src="barn.png" class="barn"  width="90" alt="Cloudy Sky">
+            <img src="1.png" class ="an1" id="sky" width="0" alt="Cloudy Sky">
+            <img src="2.png" id="bye" width="0" alt="Cloudy Sky"><br><br><br><br><br><br>
             <img src="4.png" id="lye" class="an4" width="0" alt="Cloudy Sky">
             <img src="3.png" id="zye" class="an3" width="0" alt="Cloudy Sky"><br><br>
             <img src="5.png" id="dye" width="0" alt="Cloudy Sky">
@@ -74,180 +75,190 @@
 
             var timerbutton1 = document.getElementById("button1");
             var title1= document.getElementById("title1");
-            var m=0;
-            var s=0;
-            var myInterval=-1;
+            var m1=0;
+            var s1=0;
+            var myInterval1=-1;
             var myImg1 = document.getElementById("sky");
-            var currWidth = 0;
+            var currWidth1 = 0;
 
             timerbutton1.addEventListener("click", function(event){
                 //if paused start
-                if (myInterval==-1){
+                if (myInterval1==-1 && myInterval2==-1 && myInterval3==-1 && myInterval4==-1 && myInterval5==-1){
                     timerbutton1.innerHTML="Pause";
                 
-                    myInterval= setInterval(function(){
-                        if (m==0 && s<9 ){
-                            s++;
-                            myImg1.style.width = (currWidth + 5) + "px";
-                            title1.innerHTML="00:0"+s;
-                        } else if (m==0 && s<59){
-                            s++;
-                            myImg1.style.width = (currWidth + 10) + "px";
-                            title1.innerHTML="00:"+s;
-                        } else if (s==59 && m<9){
-                            m++;
-                            s=0;
-                            myImg1.style.width = (currWidth + 15) + "px";
-                            title1.innerHTML="0"+m+":00";
-                        } else if (m<10 && s<9){
-                            s++;
-                            myImg1.style.width = (currWidth + 20) + "px";
-                            title1.innerHTML="0"+m+":0"+s;
-                        } else if (m<10 && s<59){
-                            s++;
-                            myImg1.style.width = (currWidth + 25) + "px";
-                            title1.innerHTML="0"+m+":"+s;
-                        } else if (m<60 && s<9){
-                            s++;
-                            myImg1.style.width = (currWidth +30) + "px";
-                            title1.innerHTML=m+":0"+s;
-                        } else if (m<60 && s==59){
-                            m++;
-                            s=0;
-                            myImg1.style.width = (currWidth + 35) + "px";
-                            title1.innerHTML=m+":00";
-                        }else if (m<60 && s<59){
-                            s++;
-                            myImg1.style.width = (currWidth + 70) + "px";
-                            title1.innerHTML=m+":"+s;
-                        } 
+                    myInterval1= setInterval(function(){
+                        if (m1==0 && s1<9 ){
+                            s1++;
+                            myImg1.style.width = (currWidth1 + 5) + "px";
+                            title1.innerHTML="00:0"+s1;
+                        } else if (m1==0 && s1<59){
+                            s1++;
+                            myImg1.style.width = (currWidth1 + 10) + "px";
+                            title1.innerHTML="00:"+s1;
+
+                        } else if (s1==59 && m1<9){
+                            m1++;
+                            s1=0;
+                            myImg1.style.width = (currWidth1 + 20) + "px";
+                            title1.innerHTML="0"+m1+":00";
+                        } else if (m1<10 && s1<9){
+                            s1++;
+                            myImg1.style.width = (currWidth1 + 20) + "px";
+                            title1.innerHTML="0"+m1+":0"+s1;
+                        } else if (m1<10 && s1<59){
+                            s1++;
+                            myImg1.style.width = (currWidth1 + 20) + "px";
+                            title1.innerHTML="0"+m1+":"+s1;
+                        } else if (m1<60 && s1<9){
+                            s1++;
+                            myImg1.style.width = (currWidth1 +45) + "px";
+                            title1.innerHTML=m1+":0"+s1;
+                        } else if (m1<60 && s1==59){
+                            m1++;
+                            s1=0;
+                            myImg1.style.width = (currWidth1 + 45) + "px";
+                            title1.innerHTML=m1+":00";
+                        }else if (m1<60 && s1<59){
+                            s1++;
+                            myImg1.style.width = (currWidth1 + 45) + "px";
+                            title1.innerHTML=m1+":"+s1;
+                        } else if (m1==60 && s1==0){
+                            myImg1.style.width = (currWidth1 + 70) + "px";
+                            title1.innerHTML=m1+":"+s1;
+                        }
                     },1000);
                 }
                 //else pause 
                 else {
                     timerbutton1.innerHTML="Resume";
-                    clearInterval(myInterval); 
-                    myInterval=-1;
+                    clearInterval(myInterval1); 
+                    myInterval1=-1;
                 }
             }); 
 
 
             var timerbutton2 = document.getElementById("button2");
             var title2= document.getElementById("title2");
-            var m=0;
-            var s=0;
-            var myInterval=-1;
+            var m2=0;
+            var s2=0;
+            var myInterval2=-1;
             var myImg2 = document.getElementById("bye");
-            var currWidth = 0;
+            var currWidth2 = 0;
 
             timerbutton2.addEventListener("click", function(event){
                 //if paused start
-                if (myInterval==-1){
+                if (myInterval1==-1 && myInterval2==-1 && myInterval3==-1 && myInterval4==-1 && myInterval5==-1){
                     timerbutton2.innerHTML="Pause";
                 
-                    myInterval= setInterval(function(){
-                        if (m==0 && s<9 ){
-                            s++;
-                            myImg2.style.width = (currWidth + 5) + "px";
-                            title2.innerHTML="00:0"+s;
-                        } else if (m==0 && s<59){
-                            s++;
-                            myImg2.style.width = (currWidth + 10) + "px";
-                            title2.innerHTML="00:"+s;
-                        } else if (s==59 && m<9){
-                            m++;
-                            s=0;
-                            myImg2.style.width = (currWidth + 15) + "px";
-                            title2.innerHTML="0"+m+":00";
-                        } else if (m<10 && s<9){
-                            s++;
-                            myImg2.style.width = (currWidth + 20) + "px";
-                            title2.innerHTML="0"+m+":0"+s;
-                        } else if (m<10 && s<59){
-                            s++;
-                            myImg2.style.width = (currWidth + 25) + "px";
-                            title2.innerHTML="0"+m+":"+s;
-                        } else if (m<60 && s<9){
-                            s++;
-                            myImg2.style.width = (currWidth +30) + "px";
-                            title2.innerHTML=m+":0"+s;
-                        } else if (m<60 && s==59){
-                            m++;
-                            s=0;
-                            myImg2.style.width = (currWidth + 35) + "px";
-                            title2.innerHTML=m+":00";
-                        }else if (m<60 && s<59){
-                            s++;
-                            myImg2.style.width = (currWidth + 100) + "px";
-                            title2.innerHTML=m+":"+s;
-                        } 
+                    myInterval2= setInterval(function(){
+                        if (m2==0 && s2<9 ){
+                            s2++;
+                            myImg2.style.width = (currWidth2 + 5) + "px";
+                            title2.innerHTML="00:0"+s2;
+                        } else if (m2==0 && s2<59){
+                            s2++;
+                            myImg2.style.width = (currWidth2 + 10) + "px";
+                            title2.innerHTML="00:"+s2;
+                        } else if (s2==59 && m2<9){
+                            m2++;
+                            s2=0;
+                            myImg2.style.width = (currWidth2 + 30) + "px";
+                            title2.innerHTML="0"+m2+":00";
+                        } else if (m2<10 && s2<9){
+                            s2++;
+                            myImg2.style.width = (currWidth2 + 30) + "px";
+                            title2.innerHTML="0"+m2+":0"+s2;
+                        } else if (m2<10 && s2<59){
+                            s2++;
+                            myImg2.style.width = (currWidth2 + 30) + "px";
+                            title2.innerHTML="0"+m2+":"+s2;
+                        } else if (m2<60 && s2<9){
+                            s2++;
+                            myImg2.style.width = (currWidth2 +75) + "px";
+                            title2.innerHTML=m2+":0"+s2;
+                        } else if (m2<60 && s2==59){
+                            m2++;
+                            s2=0;
+                            myImg2.style.width = (currWidth2 + 75) + "px";
+                            title2.innerHTML=m2+":00";
+                        }else if (m2<60 && s2<59){
+                            s2++;
+                            myImg2.style.width = (currWidth2 + 75) + "px";
+                            title2.innerHTML=m2+":"+s2;
+                        } else if (m2==60 && s2==0){
+                            myImg2.style.width = (currWidth2 + 100) + "px";
+                            title2.innerHTML=m2+":"+s2;
+                        }
                     },1000);
                 }
                 //else pause 
                 else {
                     timerbutton2.innerHTML="Resume";
-                    clearInterval(myInterval); 
-                    myInterval=-1;
+                    clearInterval(myInterval2); 
+                    myInterval2=-1;
                 }
             }); 
 
 
             var timerbutton3 = document.getElementById("button3");
             var title3= document.getElementById("title3");
-            var m=0;
-            var s=0;
-            var myInterval=-1;
+            var m3=0;
+            var s3=0;
+            var myInterval3=-1;
             var myImg3 = document.getElementById("zye");
-            var currWidth = 0;
+            var currWidth3 = 0;
 
             timerbutton3.addEventListener("click", function(event){
                 //if paused start
-                if (myInterval==-1){
+                if (myInterval1==-1 && myInterval2==-1 && myInterval3==-1 && myInterval4==-1 && myInterval5==-1){
                     timerbutton3.innerHTML="Pause";
                 
-                    myInterval= setInterval(function(){
-                        if (m==0 && s<9 ){
-                            s++;
-                            myImg3.style.width = (currWidth + 5) + "px";
-                            title3.innerHTML="00:0"+s;
-                        } else if (m==0 && s<59){
-                            s++;
-                            myImg3.style.width = (currWidth + 10) + "px";
-                            title3.innerHTML="00:"+s;
-                        } else if (s==59 && m<9){
-                            m++;
-                            s=0;
-                            myImg3.style.width = (currWidth + 15) + "px";
-                            title3.innerHTML="0"+m+":00";
-                        } else if (m<10 && s<9){
-                            s++;
-                            myImg3.style.width = (currWidth + 20) + "px";
-                            title3.innerHTML="0"+m+":0"+s;
-                        } else if (m<10 && s<59){
-                            s++;
-                            myImg3.style.width = (currWidth + 25) + "px";
-                            title3.innerHTML="0"+m+":"+s;
-                        } else if (m<60 && s<9){
-                            s++;
-                            myImg3.style.width = (currWidth +30) + "px";
-                            title3.innerHTML=m+":0"+s;
-                        } else if (m<60 && s==59){
-                            m++;
-                            s=0;
-                            myImg3.style.width = (currWidth + 35) + "px";
-                            title3.innerHTML=m+":00";
-                        }else if (m<60 && s<59){
-                            s++;
-                            myImg3.style.width = (currWidth + 80) + "px";
-                            title3.innerHTML=m+":"+s;
-                        } 
+                    myInterval3= setInterval(function(){
+                        if (m3==0 && s3<9 ){
+                            s3++;
+                            myImg3.style.width = (currWidth3 + 5) + "px";
+                            title3.innerHTML="00:0"+s3;
+                        } else if (m3==0 && s3<59){
+                            s3++;
+                            myImg3.style.width = (currWidth3 + 10) + "px";
+                            title3.innerHTML="00:"+s3;
+                        } else if (s3==59 && m3<9){
+                            m3++;
+                            s3=0;
+                            myImg3.style.width = (currWidth3 + 25) + "px";
+                            title3.innerHTML="0"+m3+":00";
+                        } else if (m3<10 && s3<9){
+                            s3++;
+                            myImg3.style.width = (currWidth3 + 25) + "px";
+                            title3.innerHTML="0"+m3+":0"+s3;
+                        } else if (m3<10 && s3<59){
+                            s3++;
+                            myImg3.style.width = (currWidth3 + 25) + "px";
+                            title3.innerHTML="0"+m3+":"+s3;
+                        } else if (m3<60 && s3<9){
+                            s3++;
+                            myImg3.style.width = (currWidth3 +60) + "px";
+                            title3.innerHTML=m3+":0"+s3;
+                        } else if (m3<60 && s3==59){
+                            m3++;
+                            s3=0;
+                            myImg3.style.width = (currWidth3 + 60) + "px";
+                            title3.innerHTML=m3+":00";
+                        }else if (m3<60 && s3<59){
+                            s3++;
+                            myImg3.style.width = (currWidth3 + 60) + "px";
+                            title3.innerHTML=m3+":"+s3;
+                        } else if (m3==60 && s3==0){
+                            myImg3.style.width = (currWidth3 + 80) + "px";
+                            title3.innerHTML=m3+":"+s3;
+                        }
                     },1000);
                 }
                 //else pause 
                 else {
                     timerbutton3.innerHTML="Resume";
-                    clearInterval(myInterval); 
-                    myInterval=-1;
+                    clearInterval(myInterval3); 
+                    myInterval3=-1;
                 }
             }); 
 
@@ -257,60 +268,63 @@
 
             var timerbutton4 = document.getElementById("button4");
             var title4= document.getElementById("title4");
-            var m=0;
-            var s=0;
-            var myInterval=-1;
+            var m4=0;
+            var s4=0;
+            var myInterval4=-1;
             var myImg4 = document.getElementById("lye");
-            var currWidth = 0;
+            var currWidth4 = 0;
 
             timerbutton4.addEventListener("click", function(event){
                 //if paused start
-                if (myInterval==-1){
+                if (myInterval1==-1 && myInterval2==-1 && myInterval3==-1 && myInterval4==-1 && myInterval5==-1){
                     timerbutton4.innerHTML="Pause";
                 
-                    myInterval= setInterval(function(){
-                        if (m==0 && s<9 ){
-                            s++;
-                            myImg4.style.width = (currWidth + 5) + "px";
-                            title4.innerHTML="00:0"+s;
-                        } else if (m==0 && s<59){
-                            s++;
-                            myImg4.style.width = (currWidth + 10) + "px";
-                            title4.innerHTML="00:"+s;
-                        } else if (s==59 && m<9){
-                            m++;
-                            s=0;
-                            myImg4.style.width = (currWidth + 15) + "px";
-                            title4.innerHTML="0"+m+":00";
-                        } else if (m<10 && s<9){
-                            s++;
-                            myImg4.style.width = (currWidth + 20) + "px";
-                            title4.innerHTML="0"+m+":0"+s;
-                        } else if (m<10 && s<59){
-                            s++;
-                            myImg4.style.width = (currWidth + 25) + "px";
-                            title4.innerHTML="0"+m+":"+s;
-                        } else if (m<60 && s<9){
-                            s++;
-                            myImg4.style.width = (currWidth +30) + "px";
-                            title4.innerHTML=m+":0"+s;
-                        } else if (m<60 && s==59){
-                            m++;
-                            s=0;
-                            myImg4.style.width = (currWidth + 35) + "px";
-                            title4.innerHTML=m+":00";
-                        }else if (m<60 && s<59){
-                            s++;
-                            myImg4.style.width = (currWidth + 50) + "px";
-                            title4.innerHTML=m+":"+s;
-                        } 
+                    myInterval4= setInterval(function(){
+                        if (m4==0 && s4<9 ){
+                            s4++;
+                            myImg4.style.width = (currWidth4 + 5) + "px";
+                            title4.innerHTML="00:0"+s4;
+                        } else if (m4==0 && s4<59){
+                            s4++;
+                            myImg4.style.width = (currWidth4 + 10) + "px";
+                            title4.innerHTML="00:"+s4;
+                        } else if (s4==59 && m4<9){
+                            m4++;
+                            s4=0;
+                            myImg4.style.width = (currWidth4 + 15) + "px";
+                            title4.innerHTML="0"+m4+":00";
+                        } else if (m4<10 && s4<9){
+                            s4++;
+                            myImg4.style.width = (currWidth4 + 15) + "px";
+                            title4.innerHTML="0"+m4+":0"+s4;
+                        } else if (m4<10 && s4<59){
+                            s4++;
+                            myImg4.style.width = (currWidth4 + 15) + "px";
+                            title4.innerHTML="0"+m4+":"+s4;
+                        } else if (m4<60 && s4<9){
+                            s4++;
+                            myImg4.style.width = (currWidth4 +30) + "px";
+                            title4.innerHTML=m4+":0"+s4;
+                        } else if (m4<60 && s4==59){
+                            m4++;
+                            s4=0;
+                            myImg4.style.width = (currWidth4 + 30) + "px";
+                            title4.innerHTML=m4+":00";
+                        }else if (m4<60 && s4<59){
+                            s4++;
+                            myImg4.style.width = (currWidth4 + 30) + "px";
+                            title4.innerHTML=m4+":"+s4;
+                        } else if (m4==60 && s4==0){
+                            myImg4.style.width = (currWidth4 + 50) + "px";
+                            title4.innerHTML=m4+":"+s4;
+                        }
                     },1000);
                 }
                 //else pause 
                 else {
                     timerbutton4.innerHTML="Resume";
-                    clearInterval(myInterval); 
-                    myInterval=-1;
+                    clearInterval(myInterval4); 
+                    myInterval4=-1;
                 }
             }); 
 
@@ -323,60 +337,63 @@
 
             var timerbutton5 = document.getElementById("button5");
             var title5= document.getElementById("title5");
-            var m=0;
-            var s=0;
-            var myInterval=-1;
+            var m5=0;
+            var s5=0;
+            var myInterval5=-1;
             var myImg5 = document.getElementById("dye");
-            var currWidth = 0;
+            var currWidth5 = 0;
 
             timerbutton5.addEventListener("click", function(event){
                 //if paused start
-                if (myInterval==-1){
+                if (myInterval1==-1 && myInterval2==-1 && myInterval3==-1 && myInterval4==-1 && myInterval5==-1){
                     timerbutton5.innerHTML="Pause";
                 
-                    myInterval= setInterval(function(){
-                        if (m==0 && s<9 ){
-                            s++;
-                            myImg5.style.width = (currWidth + 5) + "px";
-                            title5.innerHTML="00:0"+s;
-                        } else if (m==0 && s<59){
-                            s++;
-                            myImg5.style.width = (currWidth + 10) + "px";
-                            title5.innerHTML="00:"+s;
-                        } else if (s==59 && m<9){
-                            m++;
-                            s=0;
-                            myImg5.style.width = (currWidth + 15) + "px";
-                            title5.innerHTML="0"+m+":00";
-                        } else if (m<10 && s<9){
-                            s++;
-                            myImg5.style.width = (currWidth + 20) + "px";
-                            title5.innerHTML="0"+m+":0"+s;
-                        } else if (m<10 && s<59){
-                            s++;
-                            myImg5.style.width = (currWidth + 25) + "px";
-                            title5.innerHTML="0"+m+":"+s;
-                        } else if (m<60 && s<9){
-                            s++;
-                            myImg5.style.width = (currWidth +30) + "px";
-                            title5.innerHTML=m+":0"+s;
-                        } else if (m<60 && s==59){
-                            m++;
-                            s=0;
-                            myImg5.style.width = (currWidth + 35) + "px";
-                            title5.innerHTML=m+":00";
-                        }else if (m<60 && s<59){
-                            s++;
-                            myImg5.style.width = (currWidth + 70) + "px";
-                            title5.innerHTML=m+":"+s;
-                        } 
+                    myInterval5= setInterval(function(){
+                        if (m5==0 && s5<9 ){
+                            s5++;
+                            myImg5.style.width = (currWidth5 + 5) + "px";
+                            title5.innerHTML="00:0"+s5;
+                        } else if (m5==0 && s5<59){
+                            s5++;
+                            myImg5.style.width = (currWidth5 + 10) + "px";
+                            title5.innerHTML="00:"+s5;
+                        } else if (s5==59 && m5<9){
+                            m5++;
+                            s5=0;
+                            myImg5.style.width = (currWidth5 + 20) + "px";
+                            title5.innerHTML="0"+m5+":00";
+                        } else if (m5<10 && s5<9){
+                            s5++;
+                            myImg5.style.width = (currWidth5 + 20) + "px";
+                            title5.innerHTML="0"+m5+":0"+s5;
+                        } else if (m5<10 && s5<59){
+                            s5++;
+                            myImg5.style.width = (currWidth5 + 20) + "px";
+                            title5.innerHTML="0"+m5+":"+s5;
+                        } else if (m5<60 && s5<9){
+                            s5++;
+                            myImg5.style.width = (currWidth5 +50) + "px";
+                            title5.innerHTML=m5+":0"+s5;
+                        } else if (m5<60 && s5==59){
+                            m5++;
+                            s5=0;
+                            myImg5.style.width = (currWidth5 + 50) + "px";
+                            title5.innerHTML=m5+":00";
+                        }else if (m5<60 && s5<59){
+                            s5++;
+                            myImg5.style.width = (currWidth5 + 50) + "px";
+                            title5.innerHTML=m5+":"+s5;
+                        } else if (m5==60 && s5==0){
+                            myImg5.style.width = (currWidth5 + 70) + "px";
+                            title5.innerHTML=m5+":"+s5;
+                        }
                     },1000);
                 }
                 //else pause 
                 else {
                     timerbutton5.innerHTML="Resume";
-                    clearInterval(myInterval); 
-                    myInterval=-1;
+                    clearInterval(myInterval5); 
+                    myInterval5=-1;
                 }
             }); 
 
