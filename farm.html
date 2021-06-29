@@ -16,7 +16,7 @@
             <input type="image" src="menu.JPEG" onclick="myFunction()" class="dropbtn">
           <div id="myDropdown" class="dropdown-content">
 
-            <a ><img src="1.png" width="50" alt="Cloudy Sky"><br>Price: One Hour <h1 class= " blink blink-two"   id="title1">00:00</h1><p><button  id ="button1" class="submit">Begin Studying </button> </p><br></a>
+            <a ><img src="1.png" width="50" alt="Cloudy Sky"><br>Price: One Hour <h1 class= " blink blink-two"   id="title1">00:00</h1><div class="msg"></div><p><button  id ="button1" class="submit">Begin Studying </button> </p><br></a>
 
             <a ><img src="2.png" width="70" alt="Cloudy Sky"><br>Price: One Hour <h1 id="title2">00:00</h1><p><button  id ="button2" class="submit">Begin Studying</button></p><br></a>
 
@@ -30,7 +30,7 @@
 
         <script>
         /* When the user clicks on the button, 
-        toggle between hiding and showing the dropdown content */
+        toggle between hiding and showing the drop down content */
         function myFunction() {
           document.getElementById("myDropdown").classList.toggle("show");
         }
@@ -56,7 +56,7 @@
             <img src="1.png" class ="an1" id="sky" width="70" alt="Cloudy Sky">
             <img src="2.png" id="bye" width="80" alt="Cloudy Sky"><br><br><br><br><br><br>
             <img src="4.png" id="lye" class="an4" width="50" alt="Cloudy Sky">
-            <img src="3.png" id="zye" class="an3" width=80" alt="Cloudy Sky"><br><br>
+            <img src="3.png" id="zye" class="an3" width="80" alt="Cloudy Sky"><br><br>
             <img src="5.png" id="dye" width="70" alt="Cloudy Sky">
        </p> 
 
@@ -80,6 +80,7 @@
             var myInterval1=-1;
             var myImg1 = document.getElementById("sky");
             var currWidth1 = 0;
+            const msg = document.querySelector('.msg')
 
             timerbutton1.addEventListener("click", function(event){
                 //if paused start
@@ -91,6 +92,7 @@
                             s1++;
                             myImg1.style.width = (currWidth1 + 5) + "px";
                             title1.innerHTML="00:0"+s1;
+                             
                         } else if (m1==0 && s1<59){
                             s1++;
                             myImg1.style.width = (currWidth1 + 10) + "px";
@@ -101,6 +103,7 @@
                             s1=0;
                             myImg1.style.width = (currWidth1 + 20) + "px";
                             title1.innerHTML="0"+m1+":00";
+                            
                         } else if (m1<10 && s1<9){
                             s1++;
                             myImg1.style.width = (currWidth1 + 20) + "px";
@@ -125,8 +128,12 @@
                         } else if (m1==60 && s1==0){
                             myImg1.style.width = (currWidth1 + 70) + "px";
                             title1.innerHTML="60:00";
+                            msg.classList.add('error');
+                            msg.innerHTML="Good Job";
+                            setTimeout(()=>msg.remove(),3000);
                         }
                     },1000);
+
                 }
                 //else pause 
                 else {
