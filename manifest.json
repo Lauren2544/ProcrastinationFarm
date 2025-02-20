@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "ProcrastinationFarm",
+    "version": "1.0",
+    "description": "A chrome extension to raise animals in your procrastination farm as a reward for completing tasks that you would normally procrastinate on.",
+    "action": {
+      "default_popup": "src/html/popup.html",
+      "default_icon": {
+        "16": "images/barn.png"
+      }
+    }
+}  
