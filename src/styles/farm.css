@@ -75,10 +75,10 @@ input{
   background: #abe0f5;
   border-color: transparent;
   color: white;
-  font-size: 27px;
+  font-size: 23px;
   font-weight: bold;
   height: 40px;
-  width: 240px;
+  width: 190px;
 }
 .submit:hover {
   background-color: #abe0f5;
